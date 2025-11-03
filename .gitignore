@@ -1,0 +1,34 @@
+# Mihomo 运行时文件
+mihomo.exe
+
+# 配置备份文件
+*.backup
+config.yaml.backup
+
+# 临时文件
+*.tmp
+*.log
+
+# Providers 缓存
+providers/
+
+# UI 文件夹
+ui/
+zashboard/
+
+# 数据文件
+cache.db
+*.db
+*.db-journal
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
