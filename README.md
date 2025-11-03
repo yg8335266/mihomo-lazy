@@ -65,6 +65,7 @@
 🔌 关闭代理    → 双击 关闭系统代理.bat
 ⚙️ 开机自启    → 双击 开启开机自动.bat
 ❌ 取消自启    → 双击 关闭开机自动.bat
+📥 更新配置    → 双击 更新配置.bat
 ```
 
 ---
@@ -85,6 +86,8 @@ mihomo懒人版/
 │
 ├── ⚙️ 开启开机自动.bat         # 设置开机自启动
 ├── ❌ 关闭开机自动.bat         # 取消开机自启动
+│
+├── 📥 更新配置.bat             # 从 Gist 下载最新配置
 │
 └── 📂 zashboard/             # Web UI 文件夹
 ```
@@ -144,6 +147,38 @@ external-controller: 127.0.0.1:9090    # 面板端口
 
 修改后运行 `重启.bat` 使配置生效
 
+### 从 Gist 更新配置
+
+如果你将配置文件托管在 GitHub Gist，可以使用 `更新配置.bat` 快速下载并覆盖本地配置：
+
+#### 使用步骤：
+
+1. **上传配置到 Gist**
+   - 前往 https://gist.github.com
+   - 创建新 Gist，文件名设为 `config.yaml`
+   - 粘贴你的配置内容并保存
+
+2. **获取 Gist 原始地址**
+   - 在 Gist 页面点击右上角 **"Raw"** 按钮
+   - 复制浏览器地址栏的完整 URL
+   - 格式类似：`https://gist.githubusercontent.com/username/abc123.../raw/config.yaml`
+
+3. **配置脚本**
+   - 右键编辑 `更新配置.bat`
+   - 找到 `GIST_URL` 这一行
+   - 替换为你刚才复制的 URL
+
+4. **使用**
+   - 双击 `更新配置.bat` 即可自动下载最新配置
+   - 脚本会自动备份旧配置（保存为 `config.yaml.backup`）
+   - 下载完成后运行 `重启.bat` 使配置生效
+
+#### 优势：
+- ✅ 多设备同步配置文件
+- ✅ 版本控制，可查看历史修改
+- ✅ 一键更新，无需手动复制粘贴
+- ✅ 自动备份，更新失败自动恢复
+
 ---
 
 ## ❓ 常见问题
@@ -199,6 +234,16 @@ external-controller: 127.0.0.1:9090    # 面板端口
 <summary><b>Q: 如何更新 mihomo 内核？</b></summary>
 
 从 [mihomo 官方仓库](https://github.com/MetaCubeX/mihomo/releases) 下载最新版 `mihomo.exe`，替换原文件即可。
+</details>
+
+<details>
+<summary><b>Q: 更新配置.bat 下载失败怎么办？</b></summary>
+
+可能原因及解决方法：
+1. **Gist 地址未配置或错误**：检查脚本中的 `GIST_URL` 是否正确
+2. **网络问题**：确认能正常访问 GitHub，必要时先启动代理
+3. **Gist 不存在**：在浏览器中测试能否打开该 Gist 的 Raw 地址
+4. **下载失败自动恢复**：脚本会自动恢复备份的旧配置，不用担心配置丢失
 </details>
 
 ---
