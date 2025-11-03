@@ -1,4 +1,4 @@
-@echo off
+﻿@echo off
 chcp 65001 >nul
 color 0B
 title 从 Gist 更新配置文件
