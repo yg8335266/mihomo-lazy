@@ -1,4 +1,4 @@
-@echo off
+﻿@echo off
 chcp 65001 >nul
 color 0A
 title Mihomo 首次安装与诊断工具
