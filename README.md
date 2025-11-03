@@ -89,6 +89,10 @@ mihomo懒人版/
 │
 ├── 📥 更新配置.bat             # 从 Gist 下载最新配置
 │
+├── 📝 启动脚本-路径模板.bat     # 路径配置版启动脚本（适用于路径问题）
+├── 📝 start-mihomo-路径配置版.vbs  # 路径配置版VBS脚本（静默启动）
+├── 📖 路径配置说明.md          # 路径配置详细说明文档
+│
 └── 📂 zashboard/             # Web UI 文件夹
 ```
 
@@ -212,6 +216,29 @@ external-controller: 127.0.0.1:9090    # 面板端口
 2. 访问 http://127.0.0.1:9090/ui/zashboard 检查面板
 3. 尝试以管理员权限重新运行
 4. 查看防火墙是否拦截程序
+</details>
+
+<details>
+<summary><b>Q: 运行路径是 C:\Windows\System32\cmd.exe 导致无法启动？</b></summary>
+
+这是 Windows 批处理的常见问题。当工作目录不正确时，脚本无法找到 mihomo.exe 和 config.yaml 文件。
+
+**解决方法**：使用**路径配置版脚本**
+
+1. 使用 `启动脚本-路径模板.bat`（带窗口）或 `start-mihomo-路径配置版.vbs`（静默后台）
+2. 用记事本或 VS Code 打开脚本文件
+3. 在文件开头的【路径配置区域】填写实际路径
+4. 保存后双击运行
+
+详细说明请查看 **[路径配置说明.md](路径配置说明.md)**
+
+**配置示例**：
+```batch
+set "MIHOMO_DIR=D:\Tools\mihomo-lazy"
+set "MIHOMO_EXE=D:\Tools\mihomo-lazy\mihomo.exe"
+set "CONFIG_FILE=D:\Tools\mihomo-lazy\config.yaml"
+```
+
 </details>
 
 <details>
